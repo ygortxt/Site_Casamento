@@ -1,0 +1,527 @@
+/* Importar uma fonte do Google Fonts (Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* Geral */
+body {
+    font-family: 'Montserrat', sans-serif; /* Uma fonte mais moderna e elegante */
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF; /* Fundo branco puro */
+    color: #333;
+    line-height: 1.6;
+}
+
+.content {
+    max-width: 960px;
+    margin: 80px auto 20px auto; /* Ajuste para o padding da navbar fixa */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    color: #E74C3C; /* Um vermelho mais vibrante para títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #E74C3C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #FFC0CB, #FF69B4); /* Tons de rosa degradê do claro ao escuro */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixa a navbar no topo */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+}
+
+.navbar-brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white; /* Cor do texto "Casamento Y&L" */
+    letter-spacing: 1px; /* Espaçamento entre letras para um visual mais elegante */
+}
+
+.navbar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-nav ul li {
+    margin-left: 25px;
+}
+
+.navbar-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500; /* Peso da fonte ajustado */
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar-nav ul li a:hover {
+    color: #FFE0F0; /* Um tom de rosa bem claro ao passar o mouse */
+}
+
+/* Efeito underline na navbar ao passar o mouse */
+.navbar-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Seção Hero (apenas para a página inicial) */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #FFF0F0; /* Vermelho muito claro/rosa pálido */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #FFCDD2; /* Borda suave para definir */
+}
+
+.hero-section h1 {
+    color: #E74C3C;
+    font-size: 2.8em; /* Aumenta o tamanho da fonte para destaque */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Galeria de Fotos (Página Início) */
+.photo-gallery {
+    padding: 30px 0;
+}
+
+.photo-gallery h2 {
+    text-align: center;
+    color: #E74C3C;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.photo-item {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Para manter a proporção 1:1 (quadrado) */
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Efeito de transição mais "saltitante" */
+}
+
+.photo-item.flipped {
+    transform: rotateY(180deg);
+}
+
+.photo-item img,
+.photo-item .photo-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o verso */
+}
+
+.photo-item img {
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-item .photo-description {
+    background-color: #E74C3C; /* Vermelho vibrante para o verso */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transform: rotateY(180deg); /* Começa virado */
+    border-radius: 10px;
+}
+
+.photo-item .photo-description h3 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.6em; /* Um pouco maior */
+    margin-bottom: 10px;
+}
+
+.photo-item .photo-description p {
+    font-size: 1.1em;
+    margin-bottom: 0;
+}
+
+
+/* Formulários (geral) */
+form {
+    background-color: #fcfcfc; /* Fundo do formulário mais claro */
+    padding: 30px;
+    border-radius: 10px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra mais evidente */
+    border: 1px solid #F0F0F0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 24px); /* Ajuste para padding */
+    padding: 12px;
+    border: 1px solid #CCC; /* Borda mais visível */
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #E74C3C; /* Vermelho ao focar */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+button {
+    background-color: #E74C3C; /* Vermelho vibrante */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #C0392B; /* Um tom de vermelho mais escuro */
+    transform: translateY(-2px);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mensagens de sucesso/erro (pop-up) - Opcional, pode usar alert() */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Fundo semi-transparente mais escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: none; /* Sem borda, apenas sombra */
+    width: 80%;
+    max-width: 500px;
+    border-radius: 12px; /* Mais arredondado */
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4); /* Sombra mais forte */
+}
+
+.modal-content h3 {
+    color: #E74C3C;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.modal-content p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.modal-content button {
+    background-color: #28A745; /* Verde para o botão de fechar, mais positivo */
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1em;
+}
+
+.modal-content button:hover {
+    background-color: #218838;
+}
+
+
+/* Lista de Presentes */
+.gift-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.gift-item {
+    border: 1px solid #EEE; /* Borda mais suave */
+    border-radius: 10px; /* Mais arredondado */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra melhorada */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.gift-item:hover {
+    transform: translateY(-8px); /* Eleva mais */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* Sombra mais intensa no hover */
+}
+
+.gift-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #F8F8F8; /* Borda sutil */
+}
+
+.gift-item-details {
+    padding: 15px;
+}
+
+.gift-item-details h3 {
+    color: #E74C3C;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.gift-item-details p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.gift-item-details button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 0; /* Remove a margem superior adicionada pelo estilo geral */
+}
+
+.pix-info {
+    text-align: center;
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #FFF0F0; /* Vermelho claro/rosa pálido */
+    border-radius: 10px;
+    border: 1px solid #FFCDD2; /* Borda suave */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.pix-info h2 {
+    color: #E74C3C;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.pix-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.pix-key {
+    font-size: 1.6em; /* Chave Pix maior */
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px; /* Mais arredondado */
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 2px dashed #E74C3C; /* Borda tracejada mais grossa e vermelha */
+    user-select: all; /* Permite fácil seleção para copiar */
+}
+
+.copy-pix-button {
+    background-color: #007bff; /* Azul para copiar */
+    width: auto;
+    padding: 12px 25px;
+    font-size: 1.05em;
+    margin: 0 auto;
+    display: block;
+}
+.copy-pix-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+/* Mural de Recados */
+.mural-messages {
+    padding: 20px;
+}
+
+.message-card {
+    background-color: #fcfcfc; /* Fundo do card mais claro */
+    border: 1px solid #eee; /* Borda mais suave */
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08); /* Sombra melhorada */
+    transition: transform 0.3s ease;
+}
+
+.message-card:hover {
+    transform: translateY(-3px);
+}
+
+.message-card strong {
+    color: #E74C3C;
+    font-size: 1.2em;
+    display: block; /* Para o nome ficar em uma linha própria */
+    margin-bottom: 8px;
+}
+
+.message-card p {
+    margin-top: 0; /* Remove a margem superior padrão do p */
+    margin-bottom: 0;
+    color: #555;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #F8F8F8; /* Fundo mais claro para o footer */
+    color: #777;
+    border-top: 1px solid #EEE; /* Borda sutil */
+    font-size: 0.9em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .navbar-nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar-nav ul li {
+        margin-left: 0;
+        margin-bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav ul li a {
+        display: block;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .navbar-nav ul li a::after {
+        display: none; /* Remove underline em mobile */
+    }
+
+    .photo-item {
+        padding-top: 80%; /* Ajuste para fotos em telas menores */
+    }
+
+    .content {
+        padding: 15px;
+        margin-top: 120px; /* Ajuste para navbar maior em mobile */
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .pix-key {
+        font-size: 1.2em;
+        padding: 10px 15px;
+    }
+}

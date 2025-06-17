@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento Y&L - Confirme sua Presença</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-brand">Casamento Y&L</div>
+        <nav class="navbar-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="informacoes.html">Informações</a></li>
+                <li><a href="rsvp.html">Confirme sua Presença</a></li>
+                <li><a href="presentes.html">Lista de Presentes</a></li>
+                <li><a href="mural.html">Mural de Recados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="rsvp-section">
+            <h1>Confirme Sua Presença</h1>
+            <p style="text-align: center; margin-bottom: 30px;">Sua presença é muito importante para nós! Por favor, confirme até **[DATA LIMITE AQUI]**.</p>
+
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="adultos">Número de Adultos:</label>
+                    <input type="number" id="adultos" name="adultos" min="0" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="criancas">Número de Crianças (até 10 anos):</label>
+                    <input type="number" id="criancas" name="criancas" min="0" value="0">
+                </div>
+                <div class="form-group">
+                    <label>Você poderá comparecer?</label>
+                    <div>
+                        <input type="radio" id="presencaSim" name="presenca" value="Sim" required>
+                        <label for="presencaSim">Sim, eu irei!</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="presencaNao" name="presenca" value="Não">
+                        <label for="presencaNao">Não será possível ir</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Deixe sua mensagem para os noivos:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                </div>
+                <button type="submit">Confirmar Presença</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button id="closeModalButton">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Casamento Y&L. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
