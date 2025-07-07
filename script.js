@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // **IMPORTANTE: Substitua com a URL do seu Google Apps Script para o formulário RSVP**
-            const scriptURL = 'SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI'; // Ex: 'https://script.google.com/macros/s/AKfycbz_XXXXXXXXXXXX/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzcqtkdusAaa0cIxYGLUEt7JOSoPqyiWPgiZSHEfw6wC8e3EOF8pwHJsV0AcRg811eY/exec'; // Ex: 'https://script.google.com/macros/s/AKfycbz_XXXXXXXXXXXX/exec'
 
             fetch(scriptURL, {
                 method: 'POST',
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const muralMessagesContainer = document.getElementById('muralMessagesContainer');
     if (muralMessagesContainer) {
         // **IMPORTANTE: Substitua com a URL do seu Google Apps Script para o Mural de Recados**
-        const muralScriptURL = 'SUA_URL_DO_GOOGLE_APPS_SCRIPT_PARA_MURAL_AQUI'; // Ex: 'https://script.google.com/macros/s/AKfycbz_MURAL_XXXXXXXXXXXX/exec'
+        const muralScriptURL = 'Shttps://script.google.com/macros/s/AKfycbyxXZwXJkD4xxpWiXiOEQDNsqxx0muSDCMilQQniXMPfm37ikxjKqUph9PBTI--dRiEIg/exec'; // Ex: 'https://script.google.com/macros/s/AKfycbz_MURAL_XXXXXXXXXXXX/exec'
 
         fetch(muralScriptURL)
             .then(response => {
