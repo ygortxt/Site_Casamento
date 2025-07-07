@@ -6,7 +6,7 @@ body {
     font-family: 'Montserrat', sans-serif; /* Uma fonte mais moderna e elegante */
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF; /* Fundo branco puro */
+    background-color: #000000; /* Fundo branco puro */
     color: #333;
     line-height: 1.6;
 }
@@ -15,7 +15,7 @@ body {
     max-width: 960px;
     margin: 80px auto 20px auto; /* Ajuste para o padding da navbar fixa */
     padding: 20px;
-    background-color: #fff;
+    background-color: #000000;
     border-radius: 8px;
 }
 
@@ -37,7 +37,7 @@ a:hover {
 /* Navbar */
 .navbar {
     background: linear-gradient(to right, #FFC0CB, #FF69B4); /* Tons de rosa degradê do claro ao escuro */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
