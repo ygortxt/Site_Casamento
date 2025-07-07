@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casamento Y&L - Confirme sua Presença</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirme sua Presença - Ygor & Laiane</title>
 
+  <!-- Fontes e estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
-    <section class="hero-section" data-aos="fade-up" data-aos-duration="1000">
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">Ygor & Laiane</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">Nossa História</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a href="programacao.html">Programação</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mural.html">Mural</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="navbar">
-        <div class="navbar-brand">Casamento Y&L</div>
-        <nav class="navbar-nav">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
-                <li><a href="rsvp.html">Confirme sua Presença</a></li>
-                <li><a href="presentes.html">Lista de Presentes</a></li>
-                <li><a href="mural.html">Mural de Recados</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Seção do Formulário RSVP -->
+  <section class="container" data-aos="fade-up">
+    <h1>Confirme sua Presença</h1>
+    <p class="intro">Sua presença é muito importante para nós! Confirme até 31/08/2025.</p>
 
-    <main class="content">
-        <section class="rsvp-section">
-            <h1>Confirme Sua Presença</h1>
-            <p style="text-align: center; margin-bottom: 30px;">Sua presença é muito importante para nós! Por favor, confirme até 31/08/2025!</p>
+    <form id="rsvpForm">
+      <div class="form-group">
+        <label for="nome">Nome completo:</label>
+        <input type="text" name="nome" id="nome" required />
+      </div>
 
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <label for="nome">Seu Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="form-group">
-                    <label for="adultos">Número de Adultos:</label>
-                    <input type="number" id="adultos" name="adultos" min="0" value="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="criancas">Número de Crianças (até 10 anos):</label>
-                    <input type="number" id="criancas" name="criancas" min="0" value="0">
-                </div>
-                <div class="form-group">
-                    <label>Você poderá comparecer?</label>
-                    <div>
-                        <input type="radio" id="presencaSim" name="presenca" value="Sim" required>
-                        <label for="presencaSim">Sim, eu irei!</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="presencaNao" name="presenca" value="Não">
-                        <label for="presencaNao">Não será possível ir</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="mensagem">Deixe sua mensagem para os noivos:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
-                </div>
-                <button type="submit">Confirmar Presença</button>
-            </form>
-        </section>
-    </main>
+      <div class="form-group">
+        <label for="adultos">Número de Adultos:</label>
+        <input type="number" name="adultos" id="adultos" min="0" value="1" required />
+      </div>
 
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <h3 id="modalTitle"></h3>
-            <p id="modalMessage"></p>
-            <button id="closeModalButton">Fechar</button>
-        </div>
+      <div class="form-group">
+        <label for="criancas">Número de Crianças:</label>
+        <input type="number" name="criancas" id="criancas" min="0" value="0" />
+      </div>
+
+      <div class="form-group">
+        <label>Você poderá comparecer?</label>
+        <label><input type="radio" name="presenca" value="Sim" required /> Sim</label>
+        <label><input type="radio" name="presenca" value="Não" /> Não</label>
+      </div>
+
+      <div class="form-group">
+        <label for="mensagem">Mensagem para os noivos (opcional):</label>
+        <textarea name="mensagem" id="mensagem" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn-hero">Enviar Confirmação</button>
+    </form>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>Com amor, Ygor & Laiane ♥</p>
+      <p>© 2025 Todos os direitos reservados</p>
     </div>
+  </footer>
 
-    <footer>
-        <p>© 2025 Casamento Y&L. Todos os direitos reservados.</p>
-    </footer>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    // Script para envio do formulário para o Google Apps Script
+    document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+      const form = e.target;
+      const data = new FormData(form);
 
+      // Coloque aqui a URL do seu Google Apps Script (web app do RSVP)
+      const scriptURL = 'https://script.google.com/macros/s/SUA_URL_DO_SCRIPT/exec';
 
-    <script src="script.js"></script>
+      fetch(scriptURL, {
+        method: 'POST',
+        body: data
+      })
+      .then(() => {
+        window.location.href = 'thanks.html'; // Redireciona após o envio
+      })
+      .catch(error => {
+        alert('Erro ao enviar. Tente novamente mais tarde.');
+        console.error('Erro:', error);
+      });
+    });
+  </script>
 </body>
 </html>

@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casamento Y&L - Início</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ygor & Laiane - Nosso Casamento</title>
+
+  <!-- Fontes elegantes do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Biblioteca de animações AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
-    <header class="navbar" data-aos="fade-down" data-aos-duration="1000">
-        <div class="navbar-brand">Casamento Y&L</div>
-        <nav class="navbar-nav">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
-                <li><a href="rsvp.html">Confirme sua Presença</a></li>
-                <li><a href="presentes.html">Lista de Presentes</a></li> 
-                <li><a href="mural.html">Mural de Recados</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Cabeçalho com menu de navegação -->
+  <header class="navbar">
+    <div class="logo">Ygor & Laiane</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">Nossa História</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a href="programacao.html">Programação</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mural.html">Mural</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main class="content">
-        <section class="hero-section" data-aos="fade-up" data-aos-delay="200">
-            <h1>Seja bem-vindo(a) ao nosso site de casamento!</h1>
-            <p>Em breve, mais detalhes sobre o nosso grande dia.</p>
-            <p>Aqui você encontrará todas as informações sobre nosso casamento, nossa história e como compartilhar esse momento especial conosco.</p>
-        </section>
+  <!-- Seção Hero com imagem de fundo (substituir 'img/hero.jpg' pela imagem real) -->
+  <section class="hero" style="background-image: url('img/hero.jpg');">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>O grande dia de Ygor & Laiane</h1>
+      <p>30 de Novembro de 2025</p>
+      <a href="informacoes.html" class="btn-hero">Ver detalhes do casamento</a>
+    </div>
+  </section>
 
-        <section class="photo-gallery" data-aos="fade-up" data-aos-delay="400">
-            <h2>Nossa História em Fotos</h2>
-            <div class="photo-grid" id="photo-grid">
-                <!-- Galeria carregada por script.js -->
-            </div>
-        </section>
-    </main>
+  <!-- Seção de boas-vindas -->
+  <section class="boas-vindas" data-aos="fade-up">
+    <div class="container">
+      <h2>Bem-vindo ao nosso site!</h2>
+      <p>
+        Estamos muito felizes em compartilhar esse momento tão especial com você.
+        Aqui você encontrará todas as informações sobre o nosso casamento,
+        como local, data, confirmação de presença, galeria de fotos e muito mais.
+      </p>
+    </div>
+  </section>
 
-    <footer data-aos="fade-up" data-aos-delay="600">
-        <p>© 2025 Casamento Y&L. Todos os direitos reservados.</p>
-    </footer>
+  <!-- Rodapé com mensagem carinhosa -->
+  <footer>
+    <div class="container">
+      <p>Com amor, Ygor & Laiane ♥</p>
+      <p>© 2025 Todos os direitos reservados</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+  <!-- Scripts finais -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>

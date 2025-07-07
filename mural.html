@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casamento Y&L - Mural de Recados</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.png" type="image/png">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mural de Recados - Ygor & Laiane</title>
 
+  <!-- Fontes e estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Biblioteca AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 </head>
 <body>
-    <section class="hero-section" data-aos="fade-up" data-aos-duration="1000">
+  <!-- Cabeçalho -->
+  <header class="navbar">
+    <div class="logo">Ygor & Laiane</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="historia.html">Nossa História</a></li>
+        <li><a href="informacoes.html">Informações</a></li>
+        <li><a href="programacao.html">Programação</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="mural.html">Mural</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="navbar">
-        <div class="navbar-brand">Casamento Y&L</div>
-        <nav class="navbar-nav">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="informacoes.html">Informações</a></li>
-                <li><a href="rsvp.html">Confirme sua Presença</a></li>
-                <li><a href="presentes.html">Lista de Presentes</a></li>
-                <li><a href="mural.html">Mural de Recados</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Seção principal -->
+  <section class="container" data-aos="fade-up">
+    <h1>Mural de Recados</h1>
+    <p class="intro">Veja as mensagens carinhosas que estamos recebendo 💌</p>
 
-    <main class="content">
-        <section class="mural-section">
-            <h1>Mural de Recados</h1>
-            <p style="text-align: center; margin-bottom: 30px;">Leia as lindas mensagens deixadas por nossos amigos e familiares!</p>
+    <div id="mural-mensagens" class="mural-messages">
+      <p style="text-align: center; color: #777;">Carregando mensagens...</p>
+    </div>
+  </section>
 
-            <div id="muralMessagesContainer" class="mural-messages">
-                <p style="text-align: center; color: #777;">Carregando mensagens...</p>
-            </div>
-        </section>
-    </main>
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>Com amor, Ygor & Laiane ♥</p>
+      <p>© 2025 Todos os direitos reservados</p>
+    </div>
+  </footer>
 
-    <footer>
-        <p>© 2025 Casamento Y&L. Todos os direitos reservados.</p>
-    </footer>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
+  <script>
+    // URL do Google Apps Script que retorna as mensagens em JSON
+    const muralScriptURL = 'https://script.google.com/macros/s/SUA_URL_DO_MURAL/exec';
 
+    fetch(muralScriptURL)
+      .then(res => res.json())
+      .then(data => {
+        const mural = document.getElementById('mural-mensagens');
+        mural.innerHTML = '';
 
-    <script src="script.js"></script>
+        if (data.length === 0) {
+          mural.innerHTML = '<p style="text-align: center;">Nenhuma mensagem ainda. Seja o primeiro a escrever!</p>';
+        }
+
+        data.reverse().forEach(msg => {
+          const div = document.createElement('div');
+          div.classList.add('message-card');
+          div.setAttribute('data-aos', 'fade-up');
+          div.innerHTML = `
+            <strong>${msg.Nome}</strong>
+            <p>${msg.Mensagem}</p>
+          `;
+          mural.appendChild(div);
+        });
+      })
+      .catch(error => {
+        console.error('Erro ao carregar o mural:', error);
+        document.getElementById('mural-mensagens').innerHTML = '<p style="text-align: center; color: red;">Erro ao carregar as mensagens.</p>';
+      });
+  </script>
 </body>
 </html>
